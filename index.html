@@ -1,14 +1,21 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OPEX LOGISTICS</title>
+    <title>Opex Logistics</title>
     <script>
-        window.location.replace("Accueil.html");
+        // Vérifier si une dernière route a été enregistrée et rediriger si nécessaire
+        const lastRoute = localStorage.getItem("lastVisitedRoute");
+        if (lastRoute) {
+            const parsedRoute = JSON.parse(lastRoute);
+            if (parsedRoute.length > 0) {
+                window.location.href = `/${parsedRoute.join("/")}`;
+            }
+        }
     </script>
 </head>
 <body>
+    <noscript>Veuillez activer JavaScript pour utiliser cette application.</noscript>
 </body>
 </html>
